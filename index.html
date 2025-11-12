@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meebhoomi AP Land Records: How to Check and Download Adangal & 1-B Online</title>
+    <meta name="description" content="Meebhoomi Andhra Pradesh is the official online land records portal launched by the Revenue Department of the Government of Andhra Pradesh (AP), India.">
+    <meta name="keywords" content="meebhoomi, webland, mee bhoomi, meebhoomi ap, bhoomi">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Set default font to Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .govt-primary { background-color: #1e3a8a; }
+        .govt-secondary { background-color: #10b981; }
+        .govt-text-primary { color: #1e3a8a; }
+        .service-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.1), 0 4px 6px -2px rgba(30, 58, 138, 0.05);
+        }
+        /* Style for the overlay background */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Navigation -->
+    <header class="govt-primary text-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Government Logo/Icon (Placeholder) -->
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1h-3a1 1 0 001 1v-4a1 1 0 011-1h2a1 1 0 011 1v4z"></path></svg>
+                <h1 class="text-xl sm:text-2xl font-bold tracking-tight">MeeBhoomi <span class="text-yellow-300">(మీ భూమి)</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-yellow-300 transition duration-150">Home</a>
+                <a href="#about" class="hover:text-yellow-300 transition duration-150">About</a>
+                <a href="#empowerment" class="hover:text-yellow-300 transition duration-150">Digitization Detail</a>
+                <a href="#services" class="hover:text-yellow-300 transition duration-150">Services</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-150">e-Passbook</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-150">Contact Us</a>
+            </nav>
+            <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition duration-150">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+             <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">Home</a>
+             <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">About</a>
+             <a href="#empowerment" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">Digitization Detail</a>
+             <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">Services</a>
+             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">e-Passbook</a>
+             <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:text-govt-primary">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="home">
+
+            <!-- Hero Section -->
+            <section class="text-center py-12 bg-white rounded-xl shadow-lg mb-10">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Digital Land Records of Andhra Pradesh
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A transparency initiative by the Revenue Department, Government of Andhra Pradesh.
+                    Access <span class="font-semibold govt-text-primary">Adangal, 1-B, Village Maps,</span> and more instantly online.
+                </p>
+                <div class="mt-8">
+                    <button onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });" class="govt-primary text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-blue-800 transition duration-300">
+                        Explore Land Records
+                    </button>
+                </div>
+            </section>
+            
+            <!-- SECTION: About the Initiative -->
+            <section id="about" class="py-10">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-govt-secondary pl-3">
+                    About the MeeBhoomi Initiative
+                </h3>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        <a href="https://mymeebhoomi.com/">MeeBhoomi</a> (మీ భూమి, meaning 'My Land') is a revolutionary digital initiative launched by the Government of Andhra Pradesh to modernize land record management. The primary goal is to bring transparency, reduce paperwork, and provide citizens with easy, instant access to their land records from anywhere. This digitalization project is a crucial step towards ensuring accuracy in ownership, cultivation, and survey details, minimizing disputes and facilitating smoother legal and financial transactions.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The portal integrates various crucial documents—such as the Adangal (cultivation records), 1-B (Record of Rights), and Field Measurement Book (FMB) maps—into a single, unified platform. By linking these records with Aadhaar, the system ensures secure and tamper-proof verification, empowering farmers and landowners with unprecedented control over their property information.
+                    </p>
+                    <div class="mt-6 p-4 border-l-4 border-govt-primary bg-blue-50 text-blue-800 rounded-md">
+                        <p class="text-sm font-semibold">Vision:</p>
+                        <p class="text-sm">To establish a comprehensive, transparent, and easily accessible digital registry for all land assets in Andhra Pradesh.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- END About SECTION -->
+
+            <!-- NEW SECTION: Comprehensive Land Digitization and Citizen Empowerment (Approx 1500 words) -->
+            <section id="empowerment" class="py-10">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-govt-secondary pl-3">
+                    Comprehensive Land Digitization and Citizen Empowerment
+                </h3>
+                <div class="bg-white rounded-xl shadow-lg p-8 space-y-8">
+                    
+                    <h4 class="text-2xl font-semibold govt-text-primary border-b pb-2">The Technical Backbone: Shifting from Paper to Precision</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        The journey to the MeeBhoomi portal began with the monumental task of converting hundreds of years of physical, often fragile, paper records into a structured, relational database. This included the manual Khasra (survey numbers) and the detailed Record of Rights (ROR) registers, which frequently contained errors due to manual entry, poor handwriting, and historical discrepancies from successive land settlements. The first phase involved a statewide data standardization and cleansing operation, where specialized teams meticulously cross-referenced digitized entries against original records. Any variance or ambiguity triggered a flag, necessitating a field-level re-verification by the Village Revenue Officers (VROs) and Survey Department officials. This rigorous process was essential because the integrity of the digital system rests entirely on the accuracy of the initial data conversion. This is not merely data entry; it is the creation of a Digital Single Source of Truth (DSSOT) for every parcel of land in the state. The technology stack supporting this includes robust cloud infrastructure for scalability, advanced encryption protocols to secure sensitive ownership data, and a geographical information system (GIS) foundation to link textual data seamlessly with spatial attributes. The system is designed to handle millions of queries daily, ensuring high availability and sub-second response times for citizens seeking their records, fundamentally changing the accessibility paradigm from long queues at a government office to instant mobile access.
+                    </p>
+                    
+                    <h4 class="text-2xl font-semibold govt-text-primary border-b pb-2">Geospatial Integration and Boundary Demarcation</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        A critical differentiator of the MeeBhoomi project is its deep integration with Geospatial Information Systems (GIS). Traditional land records often relied on hand-drawn Field Measurement Book (FMB) sketches, which were prone to distortion and lacked the precision required for modern commerce and dispute resolution. The digitization program has utilized high-resolution satellite imagery and Differential Global Positioning System (DGPS) technology to accurately map and georeference every land parcel boundary. This transition from sketch to precision coordinates means that land boundaries are now mathematically defined, drastically reducing encroachments and boundary disputes. The digital FMBs are dynamically linked to the textual ROR data, meaning that any change in ownership or mutation is instantaneously reflected on the map. This real-time synchronization is a powerful tool for transparency; citizens can overlay their digital ownership documents onto satellite maps to visually confirm their property's location and dimensions. Furthermore, the GIS platform facilitates proactive governance by allowing the Revenue Department to easily identify government land encroachments, monitor changing crop patterns (via Adangal data), and plan infrastructure projects with minimal land acquisition conflicts, as precise ownership details are available upfront, a significant advancement over previous manual inspection regimes.
+                    </p>
+
+                    <h4 class="text-2xl font-semibold govt-text-primary border-b pb-2">The Mutation and Update Lifecycle: A Transparency Engine</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        The true test of any digital land record system lies in its ability to handle mutations—the process of updating records after a sale, inheritance, gift deed, or partition. In the past, this process was notoriously opaque, time-consuming, and susceptible to illegal manipulation, often taking months or even years to finalize. MeeBhoomi has streamlined the entire mutation lifecycle into a digital, auditable workflow. When a document is registered at the Sub-Registrar Office (SRO), the transaction data is automatically pushed to the MeeBhoomi system. This triggers a mandatory, time-bound digital workflow for the VRO and Mandal Revenue Officer (MRO). Notifications are instantly sent via SMS to the buyer, seller, and adjacent landowners, providing them with a mandatory window to raise objections. Every step, from the initial application to the final digital signature by the competent authority, is recorded with a timestamp and user ID, creating an immutable audit trail. This elimination of human interface and the imposition of strict service-level agreements (SLAs) for processing times have dramatically reduced the potential for corruption and bureaucratic delays. Citizens can monitor the status of their mutation application online at any time, promoting transparency that was unimaginable in the traditional paper-based environment. This systematic digital oversight ensures that the records remain current and reflect the ground reality without administrative friction.
+                    </p>
+
+                    <h4 class="text-2xl font-semibold govt-text-primary border-b pb-2">Economic and Financial Empowerment for Farmers</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Beyond basic transparency, the MeeBhoomi system serves as a powerful engine for economic empowerment, especially for the agricultural community. Land records are the primary collateral for securing institutional credit. In the manual system, banks required exhaustive, time-consuming verification of paper RORs, often leading to delays that prevented farmers from accessing timely loans for planting seasons. The digital validity of the e-Passbook issued through MeeBhoomi changes this dynamic entirely. The system provides banks and financial institutions with secure, API-based access to instantly verify the authenticity of a farmer's land ownership and extent. This instantaneous, verifiable collateral significantly accelerates the loan application process, lowers the risk profile for banks, and ensures that financial credit flows efficiently to the farming sector. Furthermore, the linkage of cultivation data (Adangal) allows government agencies to accurately disburse subsidies, insurance payouts, and compensation directly to the verified land account holders (via Aadhaar linkage), minimizing leakage and ensuring targeted benefit delivery. The system is designed to act as a catalyst for integrating informal land assets into the formal economy, fostering greater financial inclusion for millions of small and marginal farmers who previously struggled with document complexity. This formalization provides a solid foundation for property rights, which is universally recognized as a prerequisite for long-term economic growth and stability.
+                    </p>
+
+                    <h4 class="text-2xl font-semibold govt-text-primary border-b pb-2">Future Vision: Resilience, Security, and Governance Integration</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        The evolution of MeeBhoomi is ongoing, with a focus on future-proofing the registry against technological obsolescence and security threats. A key initiative under consideration is the pilot implementation of Distributed Ledger Technology (DLT), or blockchain, for mutation events. While the current system maintains a robust audit trail, DLT would provide an additional, tamper-proof layer of verification by permanently recording transactions on a decentralized network, making the records virtually immutable and enhancing public trust. Furthermore, the system is being integrated with broader e-governance platforms, including municipal and town planning departments. This allows for unified permissions processing, such as instant verification of property ownership before granting building permits or utility connections, cutting down on red tape across multiple departments. The Disaster Recovery (DR) plan for MeeBhoomi is multi-layered, utilizing geographically diverse cloud backups to ensure that land records are resilient to physical catastrophes or localized data center failures. Regular penetration testing and security audits are mandated to protect against cyber threats and unauthorized access, maintaining the confidentiality of citizen data. The ultimate vision is for MeeBhoomi to transition from a mere records repository to a comprehensive Land Management System (LMS) that informs policy, facilitates urban development, monitors environmental compliance, and serves as the definitive reference point for all land-related decisions across the state, ensuring that the digital initiative continuously delivers value and empowerment to every citizen of Andhra Pradesh.
+                    </p>
+                    <!-- End of the long content section -->
+                </div>
+            </section>
+            <!-- END NEW SECTION -->
+
+            <!-- Services Grid -->
+            <section id="services" class="py-10">
+                <h3 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-govt-secondary pl-3">Key Services: Your Land Details</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Card 1: Adangal (Pahani) -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Adangal (Pahani) - మీ అడంగల్');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-primary bg-opacity-10 text-govt-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">Your Adangal (మీ అడంగల్)</h4>
+                                <p class="text-gray-500 text-sm">View detailed land cultivation records (Pahani).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 1-B Record of Rights -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Record of Rights (1-B) - మీ 1-బి');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-secondary bg-opacity-10 text-govt-secondary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">Your 1-B (మీ 1-బి)</h4>
+                                <p class="text-gray-500 text-sm">Access Record of Rights (ROR) and ownership details.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Village Map / FMB -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Village Map / FMB');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-primary bg-opacity-10 text-govt-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">Village Map (గ్రామ పటం)</h4>
+                                <p class="text-gray-500 text-sm">View geographical and Field Measurement Book (FMB) maps.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Aadhaar Linking Status -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Aadhaar Linking Status');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-secondary bg-opacity-10 text-govt-secondary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-1 4l-3 3m0 0l-3-3m3 3V3"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">Aadhaar Seeding Status</h4>
+                                <p class="text-gray-500 text-sm">Check the status of Aadhaar linking with your land account.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Electronic Passbook Download -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Electronic Passbook Download');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-primary bg-opacity-10 text-govt-primary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">e-Passbook (భూమి పాసు పుస్తకము)</h4>
+                                <p class="text-gray-500 text-sm">Download your digital land ownership passbook.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Land Dispute Status -->
+                    <div class="service-card p-6 bg-white rounded-xl shadow-md border border-gray-100" onclick="showServiceModal('Village Land Disputes');">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 rounded-full govt-secondary bg-opacity-10 text-govt-secondary">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold govt-text-primary">Village Land Disputes</h4>
+                                <p class="text-gray-500 text-sm">Check the status of pending land disputes in the village.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for Service Input -->
+    <div id="serviceModal" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-overlay">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4 p-6 transform transition-all scale-100">
+            <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+                <h4 id="modalTitle" class="text-2xl font-bold govt-text-primary">Service Title Placeholder</h4>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <div id="modal-form-content" class="py-4 space-y-4">
+
+                <div>
+                    <label for="district" class="block text-sm font-medium text-gray-700">District</label>
+                    <select id="district" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-govt-primary focus:border-govt-primary sm:text-sm rounded-md shadow-sm">
+                        <option>Select District</option>
+                        <option>Guntur</option>
+                        <option>Krishna</option>
+                        <option>Visakhapatnam</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mandal" class="block text-sm font-medium text-gray-700">Mandal</label>
+                    <input type="text" id="mandal" placeholder="Enter Mandal Name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 focus:ring-govt-primary focus:border-govt-primary">
+                </div>
+                <div>
+                    <label for="surveyNo" class="block text-sm font-medium text-gray-700">Survey No. / Khata No. / Aadhaar No.</label>
+                    <input type="text" id="surveyNo" placeholder="Enter number" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 focus:ring-govt-primary focus:border-govt-primary">
+                </div>
+
+                <div id="resultDisplay" class="hidden p-4 bg-green-50 rounded-lg border border-green-200 text-green-800">
+                    <!-- Result will be inserted here -->
+                </div>
+            </div>
+
+            <div class="flex justify-end pt-4 border-t border-gray-200 space-x-3">
+                <button onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition duration-150">
+                    Cancel
+                </button>
+                <button onclick="submitQuery()" id="submitButton" class="govt-primary text-white px-4 py-2 text-sm font-medium rounded-lg shadow-md hover:bg-blue-800 transition duration-150">
+                    Get Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="govt-primary mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-blue-800 pb-6 mb-6">
+                <!-- Contact -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-3 border-b border-yellow-300 pb-1">Contact</h5>
+                    <p class="text-sm">ReThe Chief Commissioner of Land Administration , APIIC Towers,
+                     1st & 3rd Floors, IT Park, Auto Nagar , Mangalagiri 522503.</p>
+                    <p class="text-sm">Email: ccla-as-cmro@ap.gov.in</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-3 border-b border-yellow-300 pb-1">Quick Links</h5>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="text-sm hover:text-yellow-300">Application Status</a></li>
+                        <li><a href="#" class="text-sm hover:text-yellow-300">Land Conversion</a></li>
+                        <li><a href="#" class="text-sm hover:text-yellow-300">Application for FMB</a></li>
+                    </ul>
+                </div>
+                <!-- Disclaimer -->
+                <div class="md:col-span-2">
+                    <h5 class="text-lg font-semibold mb-3 border-b border-yellow-300 pb-1">Important Note</h5>
+                    <p class="text-xs opacity-75">
+                        The data presented here is for general information only. For any legal or financial transactions, please obtain certified copies from the Tahsildar Office or the official AP government portal.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center text-sm opacity-75">
+                © 2024 MeeBhoomi Portal - Revenue Department, Government of Andhra Pradesh
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // --- Navigation Logic ---
+        document.getElementById('menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('serviceModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const resultDisplay = document.getElementById('resultDisplay');
+        const submitButton = document.getElementById('submitButton');
+        const formContent = document.getElementById('modal-form-content');
+
+        let currentService = '';
+
+        function showServiceModal(serviceName) {
+            currentService = serviceName;
+            modalTitle.textContent = serviceName;
+            resultDisplay.classList.add('hidden'); // Hide previous result
+            resultDisplay.innerHTML = '';
+            // Reset form inputs
+            document.getElementById('district').value = 'Select District';
+            document.getElementById('mandal').value = '';
+            document.getElementById('surveyNo').value = '';
+            
+            // Re-enable form inputs and button
+            formContent.querySelectorAll('input, select').forEach(el => el.disabled = false);
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Details';
+            submitButton.classList.remove('bg-gray-400', 'hover:bg-gray-400');
+            submitButton.classList.add('govt-primary', 'hover:bg-blue-800');
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            resultDisplay.classList.add('hidden'); // Ensure result is hidden on close
+        }
+
+        function submitQuery() {
+            const district = document.getElementById('district').value;
+            const mandal = document.getElementById('mandal').value;
+            const surveyNo = document.getElementById('surveyNo').value;
+
+            if (district === 'Select District' || !mandal.trim() || !surveyNo.trim()) {
+                // Use a simple message box instead of alert()
+                displayResult('Please fill out all fields (District, Mandal, and Survey/Khata/Aadhaar No.) to proceed.', 'red');
+                return;
+            }
+
+            // Simulate loading state
+            submitButton.textContent = 'Fetching...';
+            submitButton.disabled = true;
+            submitButton.classList.add('bg-gray-400', 'hover:bg-gray-400');
+            submitButton.classList.remove('govt-primary', 'hover:bg-blue-800');
+            
+            // Simulate a network delay
+            setTimeout(() => {
+                // Re-enable button after simulated fetch
+                submitButton.textContent = 'Get Details';
+                submitButton.disabled = false;
+                submitButton.classList.remove('bg-gray-400', 'hover:bg-gray-400');
+                submitButton.classList.add('govt-primary', 'hover:bg-blue-800');
+
+                // Generate mock land record data
+                const mockData = generateMockRecord(district, mandal, surveyNo, currentService);
+                
+                // Display the mock result
+                displayResult(mockData, 'green');
+
+                // Disable form inputs after successful simulation
+                formContent.querySelectorAll('input, select').forEach(el => el.disabled = true);
+
+            }, 1500); // 1.5 second delay
+        }
+
+        function generateMockRecord(district, mandal, surveyNo, service) {
+            // A simple pseudo-random hash for consistency
+            const hash = surveyNo.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            const ownerName = `Smt. Radha Kumari (A/c No: ${1000 + hash % 50})`;
+            const extent = `${(hash % 10) + 1}.${(hash % 99)} Acres`;
+            const date = new Date(2020, (hash % 12), (hash % 28) + 1).toLocaleDateString();
+
+            if (service.includes('Adangal')) {
+                return `
+                    <h5 class="font-bold text-lg mb-2">Adangal Record (Mock)</h5>
+                    <p><strong>District:</strong> ${district}, <strong>Mandal:</strong> ${mandal}</p>
+                    <p><strong>Survey No:</strong> ${surveyNo}</p>
+                    <p><strong>Owner:</strong> ${ownerName}</p>
+                    <p><strong>Extent:</strong> ${extent}</p>
+                    <p><strong>Crop Details (2024 Kharif):</strong> Paddy (Rice)</p>
+                    <p><strong>Land Classification:</strong> Wet Land (అడివి)</p>
+                    <p class="mt-2 text-xs">Generated on: ${new Date().toLocaleDateString()}</p>
+                `;
+            } else if (service.includes('1-B')) {
+                return `
+                    <h5 class="font-bold text-lg mb-2">Record of Rights (1-B) Mock</h5>
+                    <p><strong>District:</strong> ${district}, <strong>Mandal:</strong> ${mandal}</p>
+                    <p><strong>Khata No:</strong> ${surveyNo}</p>
+                    <p><strong>Pattadar Name:</strong> ${ownerName}</p>
+                    <p><strong>Total Extent:</strong> ${extent}</p>
+                    <p><strong>Transaction Date:</strong> ${date}</p>
+                    <p class="mt-2 text-xs">This record confirms ownership details as per Revenue Registers (Mock).</p>
+                `;
+            } else if (service.includes('Aadhaar Linking')) {
+                const status = (hash % 3 === 0) ? 'PENDING' : 'LINKED Successfully';
+                const statusColor = (hash % 3 === 0) ? 'text-red-600' : 'text-green-600';
+                return `
+                    <h5 class="font-bold text-lg mb-2">Aadhaar Seeding Status (Mock)</h5>
+                    <p><strong>Account Holder:</strong> ${ownerName}</p>
+                    <p><strong>Aadhaar Number:</strong> XXXX XXXX ${surveyNo.slice(-4)}</p>
+                    <p><strong>Linking Status:</strong> <span class="${statusColor} font-bold">${status}</span></p>
+                    <p class="mt-2 text-xs">Last updated on: 2024-11-01</p>
+                `;
+            } else if (service.includes('Passbook')) {
+                return `
+                    <h5 class="font-bold text-lg mb-2">e-Passbook Download (Mock)</h5>
+                    <p>Download link for electronic passbook is ready.</p>
+                    <div class="mt-3">
+                        <button class="govt-secondary text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-600">
+                            Download e-Passbook (PDF)
+                        </button>
+                    </div>
+                    <p class="mt-2 text-xs">Verification successful. Passbook for ${ownerName} is ready.</p>
+                `;
+            } else if (service.includes('Map')) {
+                 return `
+                    <h5 class="font-bold text-lg mb-2">Village Map / FMB Access (Mock)</h5>
+                    <p>Map access granted for Village in ${mandal}, ${district}.</p>
+                    <p>A graphical representation of FMB data is available on the official portal.</p>
+                    <p class="mt-2 text-xs">Coordinates for Survey No ${surveyNo} retrieved successfully (Mock).</p>
+                `;
+            } else {
+                 return `
+                    <h5 class="font-bold text-lg mb-2">${service} Status (Mock)</h5>
+                    <p>Details for ${service} related to Survey No. ${surveyNo} are processed.</p>
+                    <p class="mt-2 text-xs">For accurate information, please use the official government portal.</p>
+                `;
+            }
+        }
+        
+        function displayResult(message, type) {
+            resultDisplay.innerHTML = message;
+            resultDisplay.classList.remove('hidden', 'bg-red-50', 'border-red-200', 'text-red-800', 'bg-green-50', 'border-green-200', 'text-green-800');
+            
+            if (type === 'green') {
+                resultDisplay.classList.add('bg-green-50', 'border-green-200', 'text-green-800');
+            } else if (type === 'red') {
+                resultDisplay.classList.add('bg-red-50', 'border-red-200', 'text-red-800');
+            }
+            // Scroll to the result within the modal
+            resultDisplay.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
